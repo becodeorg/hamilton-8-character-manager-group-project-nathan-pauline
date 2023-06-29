@@ -3,4 +3,38 @@
   margin: 0;
 }
 
+#bodyCreate {
+  background-color: #b5caeb;
+}
+#bodyCreate #mainCreate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#bodyCreate #mainCreate #formulaireCreate {
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#bodyCreate #mainCreate #formulaireCreate .labelinput {
+  display: none;
+}
+#bodyCreate #mainCreate #formulaireCreate #name {
+  margin-bottom: 25px; /* espacement */
+}
+#bodyCreate #mainCreate #formulaireCreate #uploadImage {
+  margin-top: 45px; /* espacement */
+  margin-bottom: 45px; /* espacement */
+  height: 100px;
+}
+#bodyCreate #mainCreate #formulaireCreate #uploadImage #uploadImageLabel {
+  height: 150px;
+}
+#bodyCreate #mainCreate #formulaireCreate #uploadImage #dropzone-file {
+  height: 100px;
+}
+
 /*# sourceMappingURL=style.css.map */

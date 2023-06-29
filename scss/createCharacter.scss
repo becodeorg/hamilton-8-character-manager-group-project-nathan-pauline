@@ -1,0 +1,40 @@
+#bodyCreate {
+  background-color: #b5caeb;
+  #mainCreate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+    #formulaireCreate {
+      height: 100vh;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .labelinput {
+        display: none;
+      }
+
+      #name {
+        margin-bottom: 25px; /* espacement */
+      }
+
+      #uploadImage {
+        margin-top: 45px; /* espacement */
+        margin-bottom: 45px; /* espacement */
+        height: 100px;
+
+        #uploadImageLabel {
+          height: 150px;
+        }
+
+        #dropzone-file {
+          height: 100px;
+        }
+      }
+    }
+  }
+}
