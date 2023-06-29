@@ -6,7 +6,7 @@ Projet réaliser dans le cadre de la formation BeCode sur l'utilisation des API
 
 ## Team
 
-Nathan Lombardelli
+Nathan Lombardelli <br>
 Pauline Neuville
 
 ## Link
