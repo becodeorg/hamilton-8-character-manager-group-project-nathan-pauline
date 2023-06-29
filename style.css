@@ -3,4 +3,43 @@
   margin: 0;
 }
 
+#bodyIndex {
+  background-color: #b5caeb;
+}
+#bodyIndex main .text-white {
+  transition: 0.25s;
+}
+#bodyIndex main .text-white:hover {
+  transform: scale(105%);
+  cursor: pointer;
+}
+#bodyIndex main #characterList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px;
+}
+#bodyIndex main #characterList .card {
+  background-color: white;
+  width: 150px;
+  height: 300px;
+  border-radius: 2%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: 0.25s;
+}
+#bodyIndex main #characterList .card:hover {
+  transform: scale(105%);
+  cursor: pointer;
+}
+#bodyIndex main #characterList .descriptionBlock {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+}
+#bodyIndex main #characterList .nameBlock {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+}
+
 /*# sourceMappingURL=style.css.map */
