@@ -18,6 +18,7 @@ function readFile() {
 
     FR.readAsDataURL(this.files[0]);
 
+
 }
 
 document.querySelector("#dropzone-file").addEventListener("change", readFile);
@@ -35,6 +36,8 @@ async function createCharacter(){
 
 
 
+
+
     let init = {
         method: 'POST',
         headers: {
@@ -46,8 +49,8 @@ async function createCharacter(){
 
     await fetch('https://character-database.becode.xyz/characters', init).then((result) => {
         console.log(result.json());
+        alert(result.json());
     })
-
 
 
 
