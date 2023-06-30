@@ -6,6 +6,18 @@
 #bodyCreate {
   background-color: #b5caeb;
 }
+#bodyCreate header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#bodyCreate header h1 {
+  margin-top: 100px;
+  margin-bottom: -120px;
+  font-size: 55px;
+  font-weight: bold;
+  color: #374151;
+}
 #bodyCreate #mainCreate {
   display: flex;
   justify-content: center;
@@ -32,9 +44,18 @@
 }
 #bodyCreate #mainCreate #formulaireCreate #uploadImage #uploadImageLabel {
   height: 150px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 #bodyCreate #mainCreate #formulaireCreate #uploadImage #dropzone-file {
   height: 100px;
+}
+#bodyCreate #mainCreate #formulaireCreate #createButton {
+  margin-top: 35px;
+}
+#bodyCreate #mainCreate #formulaireCreate #createButton:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
