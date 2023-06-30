@@ -37,6 +37,7 @@ async function createCharacter(){
 
 
 
+
     let init = {
         method: 'POST',
         headers: {
