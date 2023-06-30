@@ -46,8 +46,8 @@ async function createCharacter(){
 
     await fetch('https://character-database.becode.xyz/characters', init).then((result) => {
         console.log(result.json());
+        alert(result.json());
     })
-
 
 
 
