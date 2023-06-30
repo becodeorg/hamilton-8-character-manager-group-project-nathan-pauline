@@ -18,6 +18,7 @@ function readFile() {
 
     FR.readAsDataURL(this.files[0]);
 
+
 }
 
 document.querySelector("#dropzone-file").addEventListener("change", readFile);
