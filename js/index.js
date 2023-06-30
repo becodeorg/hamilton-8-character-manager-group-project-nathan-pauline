@@ -1,4 +1,4 @@
-
+;
 // je recup les infos, c ma requête api
 fetch('https://character-database.becode.xyz/characters')
     .then((response) => response.json()) // transformer la promesse, qui s'apelle response, en json (le format)
@@ -11,19 +11,20 @@ function afficher(json) {// nom de la var plus haut, c un argument de la fct
     // console.log(json) //console.log de mon fichier json
     for (let character of json) { //  2.3.
        //  console.log(character ["name"] );
-        let div = document.createElement("div"); // 2.3.
+        let div = document.createElement("a"); // 2.3.
         div.className = "card"; // je crée une classe a ma div pour la styliser plus tard dans sass
+        div.href = "./character.html?id=" + character["id"]; // character c'est clé et id c valeur (clé valeur)
+       
         
         let image = new Image();
-        image.src = 'data:image/png;base64,'+character["image"];
+        image.src = 'data:image/png;base64,'+ character["image"];
         div.appendChild(image);
         image.style.borderRadius = "5px";
         image.style.width ="100%";
 
         let nameBlock = document.createElement("p"); // 2.4.
         nameBlock.innerText = character["name"]; //2.5.
-       
-        nameBlock.className = "nameBlock";
+        nameBlock.className = "nameBlock"; 
 
         let section =  document.getElementById("characterList"); //2.7.
         section.append(div); //2.8.
@@ -32,21 +33,42 @@ function afficher(json) {// nom de la var plus haut, c un argument de la fct
         shortDescriptionBlock.innerText = character["shortDescription"];
         shortDescriptionBlock.className = "shortDescriptionBloc";
 
-        let texte = document.createElement("div");
-        texte.append(nameBlock, shortDescriptionBlock);
-        div.append(texte);
-        texte.className = "divGenerale";
+        let buttonModifying = document.createElement("a"); // je crée un button pour modifier mon chara
+        buttonModifying.className = "fa-regular fa-pen-to-square";
+        buttonModifying.style.color = "#bdd283";
+        buttonModifying.href= "./modifyCharacter.html?id=" + character["id"];
+        buttonModifying.id = "buttonModifying";
 
 
-        /* let descriptionBlock = document.createElement("p"); // 4
-        descriptionBlock.innerText = character ["description"];
-        div.append(descriptionBlock);
-        descriptionBlock.className = "descriptionBlock";
-        */
+        let buttonDelete = document.createElement("i");
+        buttonDelete.className = "fa-regular fa-trash-can";
+        buttonDelete.style.color = "#fdb068";
+        buttonDelete.addEventListener("click", ()=> {
+            deleteTheCharacter(character["id"]);
+        }); 
+        
+      
+        div.append(nameBlock, shortDescriptionBlock, buttonModifying, buttonDelete); // je met le nameBlock  shortDes et button dans ma div générale
+    
 
     }
+}
 
-
+function deleteTheCharacter(id) {
+    let reponse = window.confirm("Are you sure you want to delete this kind person?"); 
+    console.log(reponse);
+    let init = {
+        method: "DELETE"
+    
+    }
+    if (reponse){
+        console.log(id);
+        fetch('https://character-database.becode.xyz/characters/' + id,init)
+            .then((response) => console.log(response)).catch(error=> {
+                console.log(error);
+                window.location.replace("../index.html");
+            });
+    }
 }
 // 1. paraph 1 avec fetch : je vais chercher dans la page les characters de la database 
    //  1.1  je fais une première promesse, qui s'appelle réponse, et je lui donne le format .json, ca va faire transfo mes charater en format json

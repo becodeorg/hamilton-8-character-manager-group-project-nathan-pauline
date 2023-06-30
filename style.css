@@ -61,10 +61,33 @@
 #bodyIndex {
   background-color: #b5caeb;
 }
+#bodyIndex header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+#bodyIndex header input {
+  width: 60vw;
+  align-items: center;
+}
+#bodyIndex header .fa-solid {
+  font-size: 22px;
+}
 #bodyIndex main .text-white {
   transition: 0.25s;
 }
 #bodyIndex main .text-white:hover {
+  transform: scale(105%);
+  cursor: pointer;
+}
+#bodyIndex main #buttonCreate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  transition: 0.25s;
+}
+#bodyIndex main #buttonCreate:hover {
   transform: scale(105%);
   cursor: pointer;
 }
@@ -78,10 +101,11 @@
 }
 #bodyIndex main #characterList .card {
   background-color: white;
-  width: 150px;
-  height: 300px;
+  width: 250px;
+  height: 400px;
   border-radius: 2%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  text-align: center;
+  border: 3px solid #F7FCCC;
   transition: 0.25s;
 }
 #bodyIndex main #characterList .card:hover {
@@ -95,6 +119,18 @@
 #bodyIndex main #characterList .nameBlock {
   font-family: "Roboto Mono", monospace;
   font-weight: 500;
+
+  padding: 5%;
+}
+#bodyIndex main #characterList .buttonModifying {
+  margin-top: 50px;
+}
+#bodyIndex main #characterList .shortDescriptionBloc {
+  margin-bottom: 20px;
+}
+#bodyIndex main #characterList .fa-regular {
+  font-size: 22px;
+  padding: 5%;
 
 }
 
