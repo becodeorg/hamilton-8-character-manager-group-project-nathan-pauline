@@ -17,12 +17,13 @@ function readFile() {
     });
 
     FR.readAsDataURL(this.files[0]);
-
-
 }
+
+
 
 document.querySelector("#dropzone-file").addEventListener("change", readFile);
 
+document.getElementById('createButton').addEventListener('click',createCharacter);
 
 async function createCharacter(){
 
@@ -32,10 +33,6 @@ async function createCharacter(){
         description: document.querySelector('#description').value ,
         image:image64
     }
-
-
-
-
 
 
     let init = {
@@ -48,9 +45,18 @@ async function createCharacter(){
     };
 
     await fetch('https://character-database.becode.xyz/characters', init).then((result) => {
-        console.log(result.json());
-        alert(result.json());
-    })
+        if(result.ok){
+            alert('Character created !');
+            return true;
+        }else{
+            alert('error ' + result.status);
+            return false;
+        }
+    }).then(r=>{
+        if(r) { // si le caractère est créer retourner sur l'index.
+            window.location.replace("../index.html");
+        }
+    });
 
 
 

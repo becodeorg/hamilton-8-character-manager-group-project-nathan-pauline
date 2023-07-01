@@ -3,61 +3,6 @@
   margin: 0;
 }
 
-
-#bodyCreate {
-  background-color: #b5caeb;
-}
-#bodyCreate header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#bodyCreate header h1 {
-  margin-top: 100px;
-  margin-bottom: -120px;
-  font-size: 55px;
-  font-weight: bold;
-  color: #374151;
-}
-#bodyCreate #mainCreate {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-#bodyCreate #mainCreate #formulaireCreate {
-  height: 100vh;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#bodyCreate #mainCreate #formulaireCreate .labelinput {
-  display: none;
-}
-#bodyCreate #mainCreate #formulaireCreate #name {
-  margin-bottom: 25px; /* espacement */
-}
-#bodyCreate #mainCreate #formulaireCreate #uploadImage {
-  margin-top: 45px; /* espacement */
-  margin-bottom: 45px; /* espacement */
-  height: 100px;
-}
-#bodyCreate #mainCreate #formulaireCreate #uploadImage #uploadImageLabel {
-  height: 150px;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-#bodyCreate #mainCreate #formulaireCreate #uploadImage #dropzone-file {
-  height: 100px;
-}
-#bodyCreate #mainCreate #formulaireCreate #createButton {
-  margin-top: 35px;
-}
-#bodyCreate #mainCreate #formulaireCreate #createButton:hover {
-  cursor: pointer;
-
 #bodyIndex {
   background-color: #b5caeb;
 }
@@ -119,7 +64,6 @@
 #bodyIndex main #characterList .nameBlock {
   font-family: "Roboto Mono", monospace;
   font-weight: 500;
-
   padding: 5%;
 }
 #bodyIndex main #characterList .buttonModifying {
@@ -131,7 +75,116 @@
 #bodyIndex main #characterList .fa-regular {
   font-size: 22px;
   padding: 5%;
+}
 
+#bodyCreate {
+  background-color: #b5caeb;
+}
+#bodyCreate header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#bodyCreate header h1 {
+  margin-top: 100px;
+  margin-bottom: -120px;
+  font-size: 55px;
+  font-weight: bold;
+  color: #374151;
+}
+#bodyCreate #mainCreate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#bodyCreate #mainCreate #formulaireCreate {
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#bodyCreate #mainCreate #formulaireCreate .labelinput {
+  display: none;
+}
+#bodyCreate #mainCreate #formulaireCreate #name {
+  margin-bottom: 25px; /* espacement */
+}
+#bodyCreate #mainCreate #formulaireCreate #uploadImage {
+  margin-top: 45px; /* espacement */
+  margin-bottom: 45px; /* espacement */
+  height: 100px;
+}
+#bodyCreate #mainCreate #formulaireCreate #uploadImage #uploadImageLabel {
+  height: 150px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#bodyCreate #mainCreate #formulaireCreate #uploadImage #dropzone-file {
+  height: 100px;
+}
+#bodyCreate #mainCreate #formulaireCreate #createButton {
+  margin-top: 35px;
+}
+#bodyCreate #mainCreate #formulaireCreate #createButton:hover {
+  cursor: pointer;
+}
+
+#bodyModify {
+  background-color: #b5caeb;
+}
+#bodyModify header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#bodyModify header h1 {
+  margin-top: 100px;
+  margin-bottom: -120px;
+  font-size: 55px;
+  font-weight: bold;
+  color: #374151;
+}
+#bodyModify #mainModify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#bodyModify #mainModify #formulaireModify {
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#bodyModify #mainModify #formulaireModify .labelinput {
+  display: none;
+}
+#bodyModify #mainModify #formulaireModify #name {
+  margin-bottom: 25px; /* espacement */
+}
+#bodyModify #mainModify #formulaireModify #uploadImage {
+  margin-top: 45px; /* espacement */
+  margin-bottom: 45px; /* espacement */
+  height: 100px;
+}
+#bodyModify #mainModify #formulaireModify #uploadImage #uploadImageLabel {
+  height: 150px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#bodyModify #mainModify #formulaireModify #uploadImage #dropzone-file {
+  height: 100px;
+}
+#bodyModify #mainModify #formulaireModify #modifyButton {
+  margin-top: 35px;
+}
+#bodyModify #mainModify #formulaireModify #modifyButton:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

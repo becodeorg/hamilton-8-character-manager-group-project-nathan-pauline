@@ -1,4 +1,4 @@
-;
+
 // je recup les infos, c ma requête api
 fetch('https://character-database.becode.xyz/characters')
     .then((response) => response.json()) // transformer la promesse, qui s'apelle response, en json (le format)
@@ -13,7 +13,7 @@ function afficher(json) {// nom de la var plus haut, c un argument de la fct
        //  console.log(character ["name"] );
         let div = document.createElement("a"); // 2.3.
         div.className = "card"; // je crée une classe a ma div pour la styliser plus tard dans sass
-        div.href = "./character.html?id=" + character["id"]; // character c'est clé et id c valeur (clé valeur)
+        div.href = "./pages/character.html?id=" + character["id"]; // character c'est clé et id c valeur (clé valeur)
        
         
         let image = new Image();
@@ -36,7 +36,7 @@ function afficher(json) {// nom de la var plus haut, c un argument de la fct
         let buttonModifying = document.createElement("a"); // je crée un button pour modifier mon chara
         buttonModifying.className = "fa-regular fa-pen-to-square";
         buttonModifying.style.color = "#bdd283";
-        buttonModifying.href= "./modifyCharacter.html?id=" + character["id"];
+        buttonModifying.href= "./pages/modifyCharacter.html?id=" + character["id"];
         buttonModifying.id = "buttonModifying";
 
 
@@ -54,22 +54,32 @@ function afficher(json) {// nom de la var plus haut, c un argument de la fct
     }
 }
 
-function deleteTheCharacter(id) {
-    let reponse = window.confirm("Are you sure you want to delete this kind person?"); 
-    console.log(reponse);
+async function deleteTheCharacter(id) {
+    let card = document.getElementsByClassName('card');
+
+    for (let val of card){
+        val.removeAttribute("href");
+    }
+
+    let reponse = await window.confirm("Are you sure you want to delete this kind person?");
     let init = {
         method: "DELETE"
-    
     }
+
     if (reponse){
-        console.log(id);
         fetch('https://character-database.becode.xyz/characters/' + id,init)
-            .then((response) => console.log(response)).catch(error=> {
+            .then((response) => console.log(response))
+            .then(()=>
+                window.location.replace("./index.html")
+            )
+            .catch(error=> {
                 console.log(error);
-                window.location.replace("../index.html");
             });
     }
 }
+
+
+
 // 1. paraph 1 avec fetch : je vais chercher dans la page les characters de la database 
    //  1.1  je fais une première promesse, qui s'appelle réponse, et je lui donne le format .json, ca va faire transfo mes charater en format json
    // 1.2 je les fait aficher
