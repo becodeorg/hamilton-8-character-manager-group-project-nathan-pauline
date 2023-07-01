@@ -1,4 +1,4 @@
-;
+
 // je recup les infos, c ma requête api
 fetch('https://character-database.becode.xyz/characters')
     .then((response) => response.json()) // transformer la promesse, qui s'apelle response, en json (le format)
