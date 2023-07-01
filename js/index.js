@@ -13,7 +13,7 @@ function afficher(json) {// nom de la var plus haut, c un argument de la fct
        //  console.log(character ["name"] );
         let div = document.createElement("a"); // 2.3.
         div.className = "card"; // je crée une classe a ma div pour la styliser plus tard dans sass
-        div.href = "../pages/character.html?id=" + character["id"]; // character c'est clé et id c valeur (clé valeur)
+        div.href = "./pages/character.html?id=" + character["id"]; // character c'est clé et id c valeur (clé valeur)
        
         
         let image = new Image();
@@ -36,7 +36,7 @@ function afficher(json) {// nom de la var plus haut, c un argument de la fct
         let buttonModifying = document.createElement("a"); // je crée un button pour modifier mon chara
         buttonModifying.className = "fa-regular fa-pen-to-square";
         buttonModifying.style.color = "#bdd283";
-        buttonModifying.href= "../pages/modifyCharacter.html?id=" + character["id"];
+        buttonModifying.href= "./pages/modifyCharacter.html?id=" + character["id"];
         buttonModifying.id = "buttonModifying";
 
 
