@@ -96,4 +96,65 @@ async function deleteTheCharacter(id) {
 // 3 je crée un second p que j'apelle shortDescriptionBlock et dedans je vais y mettre les shortDescription du character de mon tableau json
 // 4 je crée un 3ème p qui va être ma description et dedans je vais y mettre les description du character de mon tableau json
 // 5
-// 6 
+// 6
+
+
+/************************ Shiny card ***************************/
+
+
+
+const elPhp = document.querySelector(".cardPhp");
+const wrapPhp = document.querySelector(".cardPhp__wrapper");
+let wPhp = elPhp.clientWidth;
+let hPhp = elPhp.clientHeight;
+let bPhp = elPhp.getBoundingClientRect();
+elPhp.addEventListener("mousemove", (e) => {
+    let X = (e.clientX - bPhp.width) / wPhp;
+    let Y = (e.clientY - bPhp.height) / hPhp;
+
+    let rX = -(X - 0.5) * 26;
+    let rY = (Y - 0.5) * 26;
+
+    let bgX = 40 + 20 * X;
+    let bgY = 40 + 20 * Y;
+
+    document.documentElement.style.setProperty("--xPhp", 100 * X + "%");
+    document.documentElement.style.setProperty("--yPhp", 100 * Y + "%");
+
+    document.documentElement.style.setProperty("--bgPhp-x", bgX + "%");
+    document.documentElement.style.setProperty("--bgPhp-y", bgY + "%");
+
+    document.documentElement.style.setProperty("--rPhp-x", rX + "deg");
+    document.documentElement.style.setProperty("--rPhp-y", rY + "deg");
+});
+
+
+
+
+const elShib = document.querySelector(".cardShib");
+const wrapShib = document.querySelector(".cardShib__wrapper");
+let wShib = elShib.clientWidth;
+let hShib = elShib.clientHeight;
+let bShib = elShib.getBoundingClientRect();
+elShib.addEventListener("mousemove", (e) => {
+    let X = (e.clientX - bShib.width) / wShib;
+    let Y = (e.clientY - bShib.height) / hShib;
+
+    let rX = -(X - 0.5) * 26;
+    let rY = (Y - 0.5) * 26;
+
+    let bgX = 40 + 20 * X;
+    let bgY = 40 + 20 * Y;
+
+    document.documentElement.style.setProperty("--xShib", 100 * X + "%");
+    document.documentElement.style.setProperty("--yShib", 100 * Y + "%");
+
+    document.documentElement.style.setProperty("--bgShib-x", bgX + "%");
+    document.documentElement.style.setProperty("--bgShib-y", bgY + "%");
+
+    document.documentElement.style.setProperty("--rShib-x", rX + "deg");
+    document.documentElement.style.setProperty("--rShib-y", rY + "deg");
+});
+
+
+
