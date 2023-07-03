@@ -80,6 +80,30 @@
   padding: 5%;
 }
 
+html {
+  background-color: #f0f4d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+}
+html div {
+  border: 3 px solid grey;
+  align-items: center;
+}
+html .divButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  transition: 0.25s;
+}
+html .divButton:hover {
+  transform: scale(105%);
+  cursor: pointer;
+}
+
 #bodyCreate {
   background-color: #b5caeb;
 }
