@@ -158,3 +158,24 @@ elShib.addEventListener("mousemove", (e) => {
 
 
 
+/************************ SearchBar ***************************/
+
+let searchButton = document.getElementById('searchButton');
+
+searchButton.addEventListener('click',()=>{
+
+    let searchInput = document.getElementById('simple-search');
+
+    document.getElementById("characterList").innerHTML = "";
+
+    fetch('https://character-database.becode.xyz/characters?name=' + searchInput.value)
+        .then((response) => response.json())
+        .then(json => afficher(json))
+        .catch(error=> {
+            console.log(error);
+        });
+
+});
+
+
+
