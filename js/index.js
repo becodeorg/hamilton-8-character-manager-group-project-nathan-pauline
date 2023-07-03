@@ -118,7 +118,6 @@ elPhp.addEventListener("mousemove", (e) => {
     let bgX = 40 + 20 * X;
     let bgY = 40 + 20 * Y;
 
-    console.log(X, Y);
     document.documentElement.style.setProperty("--xPhp", 100 * X + "%");
     document.documentElement.style.setProperty("--yPhp", 100 * Y + "%");
 
@@ -129,6 +128,33 @@ elPhp.addEventListener("mousemove", (e) => {
     document.documentElement.style.setProperty("--rPhp-y", rY + "deg");
 });
 
+
+
+
+const elShib = document.querySelector(".cardShib");
+const wrapShib = document.querySelector(".cardShib__wrapper");
+let wShib = elShib.clientWidth;
+let hShib = elShib.clientHeight;
+let bShib = elShib.getBoundingClientRect();
+elShib.addEventListener("mousemove", (e) => {
+    let X = (e.clientX - bShib.width) / wShib;
+    let Y = (e.clientY - bShib.height) / hShib;
+
+    let rX = -(X - 0.5) * 26;
+    let rY = (Y - 0.5) * 26;
+
+    let bgX = 40 + 20 * X;
+    let bgY = 40 + 20 * Y;
+
+    document.documentElement.style.setProperty("--xShib", 100 * X + "%");
+    document.documentElement.style.setProperty("--yShib", 100 * Y + "%");
+
+    document.documentElement.style.setProperty("--bgShib-x", bgX + "%");
+    document.documentElement.style.setProperty("--bgShib-y", bgY + "%");
+
+    document.documentElement.style.setProperty("--rShib-x", rX + "deg");
+    document.documentElement.style.setProperty("--rShib-y", rY + "deg");
+});
 
 
 
