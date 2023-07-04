@@ -1,7 +1,4 @@
 
-
-
-
 #allPage {
     background: rgb(241, 230, 242);
     padding: 0;
@@ -9,18 +6,24 @@
     align-items: center;
     text-align: center;
     display: flex;
-
-
+    flex-direction: column-reverse;
+    
+    footer {
+        width: 100%;
+    }
     .mainDiv {
         text-align: center;
         align-items: center;
-        margin:  5% auto ;
+        margin:  4% auto ;
         border:2px solid black;
         border-radius: 15px;
         width: 60%;
         box-shadow: 5px 10px 5px rgb(212, 212, 212);
         background-color: rgb(247, 246, 248);
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         
         .nameBlock {
             font-family: 'Roboto', sans-serif;
@@ -38,8 +41,8 @@
             
         }
 
-
     }
     
 
 }
+
