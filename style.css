@@ -119,6 +119,7 @@
 }
 #allPage .mainDiv .longDescriptionBlock {
   font-family: "Titillium Web", sans-serif;
+
 }
 
 #bodyCreate {
@@ -306,7 +307,6 @@
   padding: 5%;
 }
 
-
 .cardPhp {
   width: 280px;
   height: 280px;
@@ -426,6 +426,7 @@
   background: var(--patternShib), var(--rainbowShib), var(--diagonalShib);
 }
 
+
 #bodyIndex main #characterList .fa-regular {
   font-size: 22px;
   padding: 5%;
@@ -509,7 +510,6 @@ html .divButton:hover {
 #bodyCreate #mainCreate #formulaireCreate #createButton:hover {
   cursor: pointer;
 }
-
 
 /* second crazy blend  */
 .cardShib__layer2:after {

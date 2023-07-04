@@ -22,7 +22,7 @@ fetch('https://character-database.becode.xyz/characters/' + characterId)
     shortDescriptionBlock.innerText = character["shortDescription"];
     shortDescriptionBlock.className = "shortDescriptionBlock";
 
-    let longDescriptionBlock = document.createElement("p");
+    let longDescriptionBlock = document.createElement("md-block");
     longDescriptionBlock.innerText = character["description"];
     longDescriptionBlock.className = "longDescriptionBlock";
 
