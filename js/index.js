@@ -101,14 +101,13 @@ async function deleteTheCharacter(id) {
 
 /************************ Shiny card ***************************/
 
-
-
 const elPhp = document.querySelector(".cardPhp");
-const wrapPhp = document.querySelector(".cardPhp__wrapper");
-let wPhp = elPhp.clientWidth;
-let hPhp = elPhp.clientHeight;
-let bPhp = elPhp.getBoundingClientRect();
+
 elPhp.addEventListener("mousemove", (e) => {
+    let wPhp = elPhp.clientWidth;
+    let hPhp = elPhp.clientHeight;
+    let bPhp = elPhp.getBoundingClientRect();
+
     let X = (e.clientX - bPhp.width) / wPhp;
     let Y = (e.clientY - bPhp.height) / hPhp;
 
@@ -132,11 +131,12 @@ elPhp.addEventListener("mousemove", (e) => {
 
 
 const elShib = document.querySelector(".cardShib");
-const wrapShib = document.querySelector(".cardShib__wrapper");
-let wShib = elShib.clientWidth;
-let hShib = elShib.clientHeight;
-let bShib = elShib.getBoundingClientRect();
+
 elShib.addEventListener("mousemove", (e) => {
+    let wShib = elShib.clientWidth;
+    let hShib = elShib.clientHeight;
+    let bShib = elShib.getBoundingClientRect();
+
     let X = (e.clientX - bShib.width) / wShib;
     let Y = (e.clientY - bShib.height) / hShib;
 

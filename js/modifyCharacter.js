@@ -68,22 +68,24 @@ function modifyCharacter(){
         body: JSON.stringify(character)
     }
 
-        fetch('https://character-database.becode.xyz/characters/' + postId,init)
-            .then((response) => {
-                if(response.ok){
-                    alert('Character modified !');
-                    return true;
-                }else{
-                    alert('error ' + response.status);
-                    return false;
-                }
-            })
-            .then(r=> {
-                if(r) {
-                    window.location.replace("../index.html");
-                }
-            });
+        requestModifyCharacter(init);
 
+}
 
-
+function requestModifyCharacter(init) {
+    fetch('https://character-database.becode.xyz/characters/' + postId, init)
+        .then((response) => {
+            if (response.ok) {
+                alert('Character modified !');
+                return true;
+            } else {
+                alert('error ' + response.status);
+                return false;
+            }
+        })
+        .then(r => {
+            if (r) {
+                window.location.replace("../index.html");
+            }
+        });
 }

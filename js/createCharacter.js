@@ -1,7 +1,7 @@
 
 let image64;
 
-function readFile() {
+export function readFile() {
 
     if (!this.files || !this.files[0]) return;
 
@@ -23,9 +23,10 @@ function readFile() {
 
 document.querySelector("#dropzone-file").addEventListener("change", readFile);
 
-document.getElementById('createButton').addEventListener('click',createCharacter);
+document.getElementById('createButton').addEventListener('click',configRequestCreateCharacter);
 
-async function createCharacter(){
+
+async function configRequestCreateCharacter(){
 
     let character= {
         name: document.querySelector('#name').value,
@@ -44,20 +45,22 @@ async function createCharacter(){
         body: JSON.stringify(character)
     };
 
+    await createCharacterRequest(init);
+
+}
+
+async function createCharacterRequest(init) {
     await fetch('https://character-database.becode.xyz/characters', init).then((result) => {
-        if(result.ok){
+        if (result.ok) {
             alert('Character created !');
             return true;
-        }else{
+        } else {
             alert('error ' + result.status);
             return false;
         }
-    }).then(r=>{
-        if(r) { // si le caractère est créer retourner sur l'index.
+    }).then(r => {
+        if (r) { // si le caractère est créer retourner sur l'index.
             window.location.replace("../index.html");
         }
     });
-
-
-
 }

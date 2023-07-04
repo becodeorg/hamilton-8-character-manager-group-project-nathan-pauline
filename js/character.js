@@ -1,26 +1,32 @@
 const characterId = (new URLSearchParams(window.location.search)).get('id');
+
+
 fetch('https://character-database.becode.xyz/characters/' + characterId)
     .then((response) => response.json())
-    .then(character =>{
+    .then(character => displayCharacterDatas(character) );
+
+
+function displayCharacterDatas(character) {
 
     let div = document.createElement("div");
     div.className = "character";
     document.body.append(div);
-    
+
     let image = new Image();
     image.src = 'data:image/png;base64,'+ character["image"];
     div.appendChild(image);
     image.style.width = "30%";
-    
+
 
     let nameBlock = document.createElement("p"); // amener le nom du character
     nameBlock.innerText = character["name"]; // dire que y aura du texte et que c nom de l'api
     nameBlock.className = "nameBlock";  // mettre une classe nameBlock
     div.appendChild(nameBlock);
 
-    let shortDescriptionBlock = document.createElement("p"); 
-    shortDescriptionBlock.innerText = character["shortDescription"];
-    shortDescriptionBlock.className = "shortDescriptionBlock";
+
+        let shortDescriptionBlock = document.createElement("p");
+        shortDescriptionBlock.innerText = character["shortDescription"];
+        shortDescriptionBlock.className = "shortDescriptionBlock";
 
     let longDescriptionBlock = document.createElement("md-block");
     longDescriptionBlock.innerText = character["description"];
@@ -48,14 +54,14 @@ fetch('https://character-database.becode.xyz/characters/' + characterId)
 
 
     let buttonDelete = document.createElement("i");
- 
+
 
     buttonDelete.style.color = "#ed1d1d";
     buttonDelete.className = "fa-regular fa-circle-xmark";
     buttonDelete.style.fontSize = "40px";
     buttonDelete.addEventListener("click", ()=> {
-    deleteTheCharacter(character["id"]);
-    }); 
+        deleteTheCharacter(character["id"]);
+    });
 
 
     divButton.append(buttonDelete, buttonModifying);
@@ -66,10 +72,8 @@ fetch('https://character-database.becode.xyz/characters/' + characterId)
 
     main.append(image, div, divButton);
 
-});
 
-
-
+}
 
 
 async function deleteTheCharacter(id) {
