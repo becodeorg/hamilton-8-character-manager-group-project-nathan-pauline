@@ -4,7 +4,6 @@
 }
 
 #bodyIndex {
-
   background-color: #b5caeb;
 }
 #bodyIndex header {
@@ -12,9 +11,12 @@
   display: flex;
   align-items: center;
 }
+#bodyIndex header .search {
+  align-content: center;
+  justify-items: center;
+}
 #bodyIndex header input {
   width: 60vw;
-  align-items: center;
 }
 #bodyIndex header .fa-solid {
   font-size: 22px;
@@ -78,6 +80,35 @@
   padding: 5%;
 }
 
+#allPage {
+  background: rgb(241, 230, 242);
+  padding: 0;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+#allPage .mainDiv {
+  text-align: center;
+  align-items: center;
+  margin: 5% auto;
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 70%;
+  box-shadow: 5px 10px 5px rgb(212, 212, 212);
+  background-color: rgb(247, 246, 248);
+  padding: 20px;
+}
+#allPage .mainDiv .character .nameBlock {
+  font-family: "Roboto", sans-serif;
+}
+#allPage .mainDiv .character .shortDescriptionBlock {
+  font-family: "Titillium Web", sans-serif;
+}
+#allPage .mainDiv .character .longDescriptionBlock {
+  font-family: "Titillium Web", sans-serif;
+}
+
 #bodyCreate {
   background-color: #b5caeb;
 }
@@ -134,7 +165,6 @@
 }
 
 #bodyModify {
-
   background-color: #b5caeb;
 }
 #bodyModify header {
@@ -142,14 +172,6 @@
   justify-content: center;
   align-items: center;
 }
-
-#bodyIndex header .search {
-  align-content: center;
-  justify-items: center;
-}
-#bodyIndex header input {
-  width: 60vw;
-
 #bodyModify header h1 {
   margin-top: 100px;
   margin-bottom: -120px;
@@ -162,7 +184,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-
 }
 #bodyModify #mainModify #formulaireModify {
   height: 100vh;
@@ -255,18 +276,11 @@
   ) var(--bgShib-x) var(--bgShib-y) / 300%;
 }
 
-#bodyIndex main #characterList .nameBlock {
-  font-family: "Roboto Mono", monospace;
-  font-weight: 500;
-  padding: 5%;
-
-
 .cardPhp {
   width: 280px;
   height: 280px;
   box-sizing: border-box;
   position: relative;
-
 }
 
 .cardPhp__wrapper {
@@ -381,89 +395,6 @@
   background: var(--patternShib), var(--rainbowShib), var(--diagonalShib);
 }
 
-#bodyIndex main #characterList .fa-regular {
-  font-size: 22px;
-  padding: 5%;
-}
-
-html {
-  background-color: #f0f4d3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0 auto;
-}
-html div {
-  border: 3 px solid grey;
-  align-items: center;
-}
-html .divButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  transition: 0.25s;
-}
-html .divButton:hover {
-  transform: scale(105%);
-  cursor: pointer;
-}
-
-#bodyCreate {
-  background-color: #b5caeb;
-}
-#bodyCreate header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#bodyCreate header h1 {
-  margin-top: 100px;
-  margin-bottom: -120px;
-  font-size: 55px;
-  font-weight: bold;
-  color: #374151;
-}
-#bodyCreate #mainCreate {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-#bodyCreate #mainCreate #formulaireCreate {
-  height: 100vh;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#bodyCreate #mainCreate #formulaireCreate .labelinput {
-  display: none;
-}
-#bodyCreate #mainCreate #formulaireCreate #name {
-  margin-bottom: 25px; /* espacement */
-}
-#bodyCreate #mainCreate #formulaireCreate #uploadImage {
-  margin-top: 45px; /* espacement */
-  margin-bottom: 45px; /* espacement */
-  height: 100px;
-}
-#bodyCreate #mainCreate #formulaireCreate #uploadImage #uploadImageLabel {
-  height: 150px;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-#bodyCreate #mainCreate #formulaireCreate #uploadImage #dropzone-file {
-  height: 100px;
-}
-#bodyCreate #mainCreate #formulaireCreate #createButton {
-  margin-top: 35px;
-}
-#bodyCreate #mainCreate #formulaireCreate #createButton:hover {
-  cursor: pointer;
-
 /* second crazy blend  */
 .cardShib__layer2:after {
   content: "";
@@ -474,7 +405,6 @@ html .divButton:hover {
   background-size: 75%, 200% 400%, 800%, 200%;
   background-position: center, 0% var(--bgShib-y), calc(var(--bgShib-x) * -1) calc(var(--bgShib-y) * -1), var(--bgShib-x) var(--bgShib-y);
   background-blend-mode: soft-light, hue, hard-light;
-
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -10,8 +10,8 @@ fetch('https://character-database.becode.xyz/characters/' + characterId)
     let image = new Image();
     image.src = 'data:image/png;base64,'+ character["image"];
     div.appendChild(image);
-    image.style.width = "160%";
-    image.style.borderRadius = "2%";
+    
+    
 
 
     let nameBlock = document.createElement("p"); // amener le nom du character
@@ -34,17 +34,26 @@ fetch('https://character-database.becode.xyz/characters/' + characterId)
     let divButton = document.createElement("div");
     div.className = "divButton";
     document.body.append(divButton);
+    divButton.style.padding = "20px";
+    divButton.style.gap = "40px";
 
     let buttonModifying = document.createElement("a"); // je crée un button pour modifier mon chara
-    buttonModifying.className = "fa-regular fa-pen-to-square";
-    buttonModifying.style.color = "#bdd283";
+
+    buttonModifying.style.color = "#2f9d10";
+    buttonModifying.style.textDecoration = "none";
+    buttonModifying.className = "fa-solid fa-check"
     buttonModifying.href= "./pages/modifyCharacter.html?id=" + character["id"];
     buttonModifying.id = "buttonModifying";
+    buttonModifying.style.fontSize = "40px";
+    buttonModifying.style.paddingLeft = "10px";
 
 
     let buttonDelete = document.createElement("i");
-    buttonDelete.className = "fa-regular fa-trash-can";
-    buttonDelete.style.color = "#fdb068";
+ 
+
+    buttonDelete.style.color = "#ed1d1d";
+    buttonDelete.className = "fa-regular fa-circle-xmark";
+    buttonDelete.style.fontSize = "40px";
     buttonDelete.addEventListener("click", ()=> {
     deleteTheCharacter(character["id"]);
     }); 
@@ -53,7 +62,7 @@ fetch('https://character-database.becode.xyz/characters/' + characterId)
     divButton.append(buttonDelete, buttonModifying);
 
     let main = document.getElementsByTagName("main")[0];
-    main.className = "main";
+    main.className = "mainDiv";
     document.body.append(main);
 
     main.append(image, div, divButton);

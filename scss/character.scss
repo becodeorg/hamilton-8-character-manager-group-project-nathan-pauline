@@ -2,34 +2,41 @@
 
 
 
-html {
-    background-color:#f0f4d3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#allPage {
+    background: rgb(241, 230, 242);
     padding: 0;
     margin: 0 auto;
-    
+    align-items: center;
+    text-align: center;
+    display: flex;
 
 
-    div {
-        
-        border: 3 px solid grey;
+    .mainDiv {
+        text-align: center;
         align-items: center;
+        margin:  5% auto ;
+        border:2px solid black;
+        border-radius: 15px;
+        width: 70%;
+        box-shadow: 5px 10px 5px rgb(212, 212, 212);
+        background-color: rgb(247, 246, 248);
+        padding: 20px;
         
-
-    }
-
-    .divButton {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        transition: 0.25s;
-        &:hover {
-            transform: scale(105%);
-            cursor: pointer;
+        .character {
+            .nameBlock {
+                font-family: 'Roboto', sans-serif;
+            }
+            .shortDescriptionBlock {
+                font-family:'Titillium Web', sans-serif; 
+            }
+            .longDescriptionBlock {
+                font-family:'Titillium Web', sans-serif;
+            }
+        
         }
+
+
     }
+    
 
 }
