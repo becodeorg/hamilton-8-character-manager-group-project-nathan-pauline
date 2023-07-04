@@ -10,9 +10,8 @@ fetch('https://character-database.becode.xyz/characters/' + characterId)
     let image = new Image();
     image.src = 'data:image/png;base64,'+ character["image"];
     div.appendChild(image);
+    image.style.width = "30%";
     
-    
-
 
     let nameBlock = document.createElement("p"); // amener le nom du character
     nameBlock.innerText = character["name"]; // dire que y aura du texte et que c nom de l'api
@@ -21,7 +20,7 @@ fetch('https://character-database.becode.xyz/characters/' + characterId)
 
     let shortDescriptionBlock = document.createElement("p"); 
     shortDescriptionBlock.innerText = character["shortDescription"];
-    shortDescriptionBlock.className = "shortDescriptionBloc";
+    shortDescriptionBlock.className = "shortDescriptionBlock";
 
     let longDescriptionBlock = document.createElement("p");
     longDescriptionBlock.innerText = character["description"];
@@ -41,7 +40,7 @@ fetch('https://character-database.becode.xyz/characters/' + characterId)
 
     buttonModifying.style.color = "#2f9d10";
     buttonModifying.style.textDecoration = "none";
-    buttonModifying.className = "fa-solid fa-check"
+    buttonModifying.className = "fa-solid fa-pencil";
     buttonModifying.href= "./pages/modifyCharacter.html?id=" + character["id"];
     buttonModifying.id = "buttonModifying";
     buttonModifying.style.fontSize = "40px";

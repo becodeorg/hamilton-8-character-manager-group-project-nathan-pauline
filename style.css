@@ -94,18 +94,23 @@
   margin: 5% auto;
   border: 2px solid black;
   border-radius: 15px;
-  width: 70%;
+  width: 60%;
   box-shadow: 5px 10px 5px rgb(212, 212, 212);
   background-color: rgb(247, 246, 248);
   padding: 20px;
 }
-#allPage .mainDiv .character .nameBlock {
+#allPage .mainDiv .nameBlock {
   font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 20PX;
+  padding: 30px;
 }
-#allPage .mainDiv .character .shortDescriptionBlock {
+#allPage .mainDiv .shortDescriptionBlock {
   font-family: "Titillium Web", sans-serif;
+  padding: 30px;
+  font-size: 18px;
 }
-#allPage .mainDiv .character .longDescriptionBlock {
+#allPage .mainDiv .longDescriptionBlock {
   font-family: "Titillium Web", sans-serif;
 }
 
