@@ -1,9 +1,12 @@
-const characterId = (new URLSearchParams(window.location.search)).get('id');
+// fetch('https://character-database.becode.xyz/characters/' + (new URLSearchParams(window.location.search)).get('id'))
+//     .then((response) => response.json())
+//     .then(character => displayCharacterDatas(character) );
 
+import * as becodeAPI from './becodeAPI.js';
+import {deleteCharacterId} from "./becodeAPI.js";
 
-fetch('https://character-database.becode.xyz/characters/' + characterId)
-    .then((response) => response.json())
-    .then(character => displayCharacterDatas(character) );
+becodeAPI.getCharacterId((new URLSearchParams(window.location.search)).get('id')).then(character => displayCharacterDatas(character));
+
 
 
 function displayCharacterDatas(character) {
@@ -89,13 +92,15 @@ async function deleteTheCharacter(id) {
     }
 
     if (reponse){
-        fetch('https://character-database.becode.xyz/characters/' + id,init)
-            .then((response) => console.log(response))
-            .then(()=>
-                window.location.replace("./index.html")
-            )
-            .catch(error=> {
-                console.log(error);
-            });
+
+        becodeAPI.deleteCharacterId(id,init).then(()=> window.location.replace("./index.html"));
+        // fetch('https://character-database.becode.xyz/characters/' + id,init)
+        //     .then((response) => console.log(response))
+        //     .then(()=>
+        //         window.location.replace("./index.html")
+        //     )
+        //     .catch(error=> {
+        //         console.log(error);
+        //     });
     }
 }

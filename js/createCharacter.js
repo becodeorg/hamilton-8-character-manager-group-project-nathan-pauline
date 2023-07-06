@@ -1,3 +1,4 @@
+import * as becodeAPI from './becodeAPI.js';
 
 let image64;
 
@@ -50,17 +51,32 @@ async function configRequestCreateCharacter(){
 }
 
 async function createCharacterRequest(init) {
-    await fetch('https://character-database.becode.xyz/characters', init).then((result) => {
-        if (result.ok) {
-            alert('Character created !');
-            return true;
-        } else {
-            alert('error ' + result.status);
-            return false;
-        }
-    }).then(r => {
-        if (r) { // si le caractère est créer retourner sur l'index.
-            window.location.replace("../index.html");
-        }
-    });
+
+    becodeAPI.createCharacter(init).then((result) => {
+            if (result.ok) {
+                alert('Character created !');
+                return true;
+            } else {
+                alert('error ' + result.status);
+                return false;
+            }
+        }).then(r => {
+            if (r) { // si le caractère est créer retourner sur l'index.
+                window.location.replace("../index.html");
+            }
+        });
+
+    // await fetch('https://character-database.becode.xyz/characters', init).then((result) => {
+    //     if (result.ok) {
+    //         alert('Character created !');
+    //         return true;
+    //     } else {
+    //         alert('error ' + result.status);
+    //         return false;
+    //     }
+    // }).then(r => {
+    //     if (r) { // si le caractère est créer retourner sur l'index.
+    //         window.location.replace("../index.html");
+    //     }
+    // });
 }

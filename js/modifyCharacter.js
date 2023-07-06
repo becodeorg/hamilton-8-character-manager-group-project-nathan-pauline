@@ -1,11 +1,19 @@
+import * as becodeAPI from './becodeAPI.js';
+
 const postId = (new URLSearchParams(window.location.search)).get('id');
 
-fetch('https://character-database.becode.xyz/characters/'+ postId)
-    .then((response) => response.json()) // transformer la promesse, qui s'apelle response, en json (le format)
-    .then((json) =>  completeDatas(json)); // je donne en param le json
+
+becodeAPI.getCharacterId(postId).then((json) =>  completeDatas(json));
+// fetch('https://character-database.becode.xyz/characters/'+ postId)
+//     .then((response) => response.json()) // transformer la promesse, qui s'apelle response, en json (le format)
+//     .then((json) =>  completeDatas(json)); // je donne en param le json
+//
 
 
-
+/**
+ * complete les données d'un character
+ * @param json fichier json qui represente un character
+ */
 function completeDatas(json) {
     let nameField = document.getElementById('name');
     let sDescField = document.getElementById('Sdescription');
@@ -73,7 +81,8 @@ function modifyCharacter(){
 }
 
 function requestModifyCharacter(init) {
-    fetch('https://character-database.becode.xyz/characters/' + postId, init)
+
+    becodeAPI.modifyCharacterId(postId,init)
         .then((response) => {
             if (response.ok) {
                 alert('Character modified !');
@@ -88,4 +97,20 @@ function requestModifyCharacter(init) {
                 window.location.replace("../index.html");
             }
         });
+
+    // fetch('https://character-database.becode.xyz/characters/' + postId, init)
+    //     .then((response) => {
+    //         if (response.ok) {
+    //             alert('Character modified !');
+    //             return true;
+    //         } else {
+    //             alert('error ' + response.status);
+    //             return false;
+    //         }
+    //     })
+    //     .then(r => {
+    //         if (r) {
+    //             window.location.replace("../index.html");
+    //         }
+    //     });
 }
