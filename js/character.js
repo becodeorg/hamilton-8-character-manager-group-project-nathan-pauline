@@ -32,6 +32,7 @@ function displayCharacterDatas(character) {
         shortDescriptionBlock.className = "shortDescriptionBlock";
 
     let longDescriptionBlock = document.createElement("md-block");
+    longDescriptionBlock.hmin = 2;
     longDescriptionBlock.innerText = character["description"];
     longDescriptionBlock.className = "longDescriptionBlock";
 
@@ -50,7 +51,7 @@ function displayCharacterDatas(character) {
     buttonModifying.style.color = "#2f9d10";
     buttonModifying.style.textDecoration = "none";
     buttonModifying.className = "fa-solid fa-pencil";
-    buttonModifying.href= "./pages/modifyCharacter.html?id=" + character["id"];
+    buttonModifying.href= "../pages/modifyCharacter.html?id=" + character["id"];
     buttonModifying.id = "buttonModifying";
     buttonModifying.style.fontSize = "40px";
     buttonModifying.style.paddingLeft = "10px";
@@ -93,7 +94,7 @@ async function deleteTheCharacter(id) {
 
     if (reponse){
 
-        becodeAPI.deleteCharacterId(id,init).then(()=> window.location.replace("./index.html"));
+        becodeAPI.deleteCharacterId(id,init).then(()=> window.location.replace("../index.html"));
         // fetch('https://character-database.becode.xyz/characters/' + id,init)
         //     .then((response) => console.log(response))
         //     .then(()=>
