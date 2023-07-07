@@ -1,3 +1,6 @@
+import axios from 'axios';
+
+
 /**
  * récupère un caratère en json de l'api becode
  * @param id l'id du character
@@ -5,8 +8,20 @@
  */
 export function getCharacterId(id) {
 
-    return fetch('https://character-database.becode.xyz/characters/' + id)
-        .then((response) => response.json());
+    return axios.get('https://character-database.becode.xyz/characters/' + id)
+        .then((response) => {
+
+            return {
+                image: response.data.image,
+                name: response.data.name,
+                description: response.data.description,
+                shortDescription: response.data.shortDescription
+            }
+            //console.log(json);
+        });
+
+    // return fetch('https://character-database.becode.xyz/characters/' + id)
+    //     .then((response) => response.json());
 
 }
 
