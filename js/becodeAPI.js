@@ -12,6 +12,7 @@ export function getCharacterId(id) {
         .then((response) => {
 
             return {
+                id: response.data.id,
                 image: response.data.image,
                 name: response.data.name,
                 description: response.data.description,
